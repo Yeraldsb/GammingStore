@@ -2,11 +2,44 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/head"></head>
 <body>
-<header th:replace="fragments/header"></header>
-<section class="container">
-    <h1 th:text="${title}"></h1>
-    <p th:text="${games}"></p>
-</section>
-<footer th:replace="fragments/footer"></footer>
+    <header th:replace="fragments/header"></header>
+    <section class="container">
+        <h1 th:text="${title}"></h1>
+        <table class="table table-hover table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Platform</th>
+                <th scope="col">Year</th>
+                <th scope="col">Original price</th>
+                <th scope="col">Label</th>
+                <th scope="col">Discount %</th>
+                <th scope="col">Discount price</th>
+                <th scope="col">Category</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">PEGI</th>
+                <th scope="col">PEGI Content</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="game: ${games}">
+                <th scope="row" th:text="${game.id}"></th>
+                <td th:text="${game.title}"></td>
+                <td th:text="${game.platform}"></td>
+                <td th:text="${game.yearr}"></td>
+                <td th:text="${game.priceOriginal}"></td>
+                <td th:text="${game.etiqueta}"></td>
+                <td th:text="${game.discount}"></td>
+                <td th:text="${game.offer}"></td>
+                <td th:text="${game.category}"></td>
+                <td th:text="${game.publisher}"></td>
+                <td th:text="${game.PEGI}"></td>
+                <td th:text="${game.PEGIcontent}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer th:replace="fragments/footer"></footer>
 </body>
 </html>
