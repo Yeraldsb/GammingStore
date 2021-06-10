@@ -14,10 +14,10 @@ public class Game implements Serializable {
    private String title;
    private String platform;
    private Long yearr;
-   private Float priceOriginal;
+   private double priceOriginal;
    private String etiqueta;
-   private Long discount;
-   private Float priceDiscount;
+   private int discount;
+   private double priceDiscount;
    private String category;
    private String publisher;
    private Long PEGI;
@@ -53,17 +53,17 @@ public class Game implements Serializable {
        this.platform = platform;
     }
 
-    public Long getYear() {
+    public Long getYearr() {
 
        return yearr;
     }
 
-    public void setYear(Long year) {
+    public void setYearr(Long year) {
 
-       this.yearr = year;
+       this.yearr = yearr;
     }
 
-    public Float getPriceOriginal() {
+    public double getPriceOriginal() {
 
        return priceOriginal;
     }
@@ -82,24 +82,25 @@ public class Game implements Serializable {
        this.etiqueta = etiqueta;
     }
 
-    public Long getDiscount() {
+    public int getDiscount() {
 
        return discount;
     }
 
-    public void setDiscount(Long discount) {
+    public void setDiscount(int discount) {
 
        this.discount = discount;
     }
 
-    public Float getPriceDiscount() {
+    public double getPriceDiscount() {
 
        return priceDiscount;
     }
 
-    public void setPriceDiscount(Float priceDiscount)
+    public void setPriceDiscount(double priceDiscount)
     {
-       this.priceDiscount = priceDiscount;
+
+        this.priceDiscount = priceDiscount;
     }
 
     public String getCategory() {
