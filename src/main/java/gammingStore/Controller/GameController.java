@@ -25,4 +25,14 @@ public class GameController {
         model.addAttribute("games", games);
         return "games/all";
     }
+    @GetMapping("/games/new")
+    String newBook(Model model) {
+        Game game = new Game();
+        model.addAttribute("game", game);
+        model.addAttribute("title", "Create new game");
+        return "games/new";
+
+    }
+
 }
+
