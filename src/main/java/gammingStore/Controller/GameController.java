@@ -40,5 +40,13 @@ public class GameController {
         gameService.save(game);
         return "redirect:/gamess";
     }
+    /*(document).ready(function(){
+        $(".form-control").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $(".form-control tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });*/
 }
 
