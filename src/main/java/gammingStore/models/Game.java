@@ -14,7 +14,7 @@ public class Game implements Serializable {
    private String title;
    private String platform;
    private Long yearr;
-   private double price;
+   private double cost;
    private String etiqueta;
    private int discount;
    private double offer;
@@ -63,14 +63,14 @@ public class Game implements Serializable {
        this.yearr = yearr;
     }
 
-    public double getPriceOriginal() {
+    public double getCost() {
 
-       return price;
+       return cost;
     }
 
-    public void setPriceOriginal(Float priceOriginal) {
+    public void setCost(double cost) {
 
-       this.price = priceOriginal;
+       this.cost = cost;
     }
 
     public String getEtiqueta() {
@@ -149,7 +149,7 @@ public class Game implements Serializable {
                ", title='" + title + '\'' +
                ", platform='" + platform + '\'' +
                ", year='" + yearr + '\'' +
-               ", price='" + price + '\'' +
+               ", cost='" + cost + '\'' +
                ", etiqueta='" + etiqueta + '\'' +
                ", discount='" + discount + '\'' +
                ", offer='" + offer + '\'' +

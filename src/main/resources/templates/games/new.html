@@ -2,61 +2,67 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/head"></head>
 <body class="d-flex flex-column h-100">
-<header th:replace="fragments/header"></header>
-<section class="container">
-    <form th:action="@{/games/new}" th:object="${game}" method="post">
-        <div class="form-group">
-            <input type="hidden" th:field="*{id}">
-            <label class="col-md2" for="title">Title</label>
-            <input th:field="*{title}" type="text" class="col-md6 form-control form-control-sm" id="title"
-                   placeholder="Enter title">
-        </div>
-        <div class="form-group">
-            <label class="col-md2" for="platform">Platform</label>
-            <input th:field="*{platform}" type="text" class="col-md6 form-control form-control-sm" id="platform"
-                   placeholder="Enter platform">
-        </div>
-        <div class="form-group">
-            <label class="col-md2" for="yearr">Year</label>
-            <input th:field="*{yearr}" type="text" class="col-md6 form-control form-control-sm" id="yearr"
-                   placeholder="Enter year">
-        </div>
-        <div class="form-group">
-            <label class="col-md2" for="etiqueta">Label</label>
-            <input th:field="*{etiqueta}" type="text" class="col-md6 form-control form-control-sm" id="etiqueta"
-                   placeholder="Enter etiqueta">
-        </div>
-        <div class="form-group">
-            <label class="col-md2" for="discount">Discount</label>
-            <input th:field="*{discount}" type="text" class="col-md6 form-control form-control-sm" id="discount"
-                   placeholder="Enter discount">
-        </div>
-        <div class="form-group">
-            <label class="col-md2" for="offer">Offer</label>
-            <input th:field="*{offer}" type="text" class="col-md6 form-control form-control-sm" id="offer"
-                   placeholder="Enter offer">
-        </div>
-        <div class="form-group">
-            <label class="col-md2" for="category">Category</label>
-            <input th:field="*{category}" type="text" class="col-md6 form-control form-control-sm" id="category"
-                   placeholder="Enter category">
-        </div>
-        <div class="form-group">
-            <label class="col-md2" for="publisher">Publisher</label>
-            <input th:field="*{publisher}" type="text" class="col-md6 form-control form-control-sm" id="publisher"
-                   placeholder="Enter publisher">
-        </div>
-        <div class="form-group">
-            <label class="col-md2" for="PEGI">PEGI</label>
-            <input th:field="*{PEGI}" type="text" class="col-md6 form-control form-control-sm" id="PEGI"
-                   placeholder="Enter PEGI">
-        </div>
-        <div class="form-group">
-            <label class="col-md2" for="PEGIcontent">PEGI CONTENT</label>
-            <input th:field="*{PEGIcontent}" type="text" class="col-md6 form-control form-control-sm" id="PEGIcontent"
-                   placeholder="Enter PEGI CONTENT">
-        </div>
-    </form>
-</section>
-<footer th:replace="fragments/footer"></footer>
+    <header th:replace="fragments/header"></header>
+    <section class="container">
+        <h3>Add a new game</h3>
+        <form th:action="@{/games/new}" th:object="${game}" method="post">
+            <div class="form-group">
+                <input type="hidden" th:field="*{id}">
+                <label class="col-md2" for="title">Title</label>
+                <input th:field="*{title}" type="text" class="col-md6 form-control form-control-sm" id="title"
+                       placeholder="Enter title">
+            </div>
+            <div class="form-group">
+                <label class="col-md2" for="platform">Platform</label>
+                <input th:field="*{platform}" type="text" class="col-md6 form-control form-control-sm" id="platform"
+                       placeholder="Enter platform">
+            </div>
+            <div class="form-group">
+                <label class="col-md2" for="yearr">Year</label>
+                <input th:field="*{yearr}" type="text" class="col-md6 form-control form-control-sm" id="yearr"
+                       placeholder="Enter year">
+            </div>
+            <div class="form-group">
+                <label class="col-md2" for="cost">Price</label>
+                <input th:field="*{cost}" type="text" class="col-md6 form-control form-control-sm" id="cost"
+                       placeholder="Enter price">
+            </div>
+            <div class="form-group">
+                <label class="col-md2" for="etiqueta">Label</label>
+                <input th:field="*{etiqueta}" type="text" class="col-md6 form-control form-control-sm" id="etiqueta"
+                       placeholder="Enter etiqueta">
+            </div>
+            <div class="form-group">
+                <label class="col-md2" for="discount">Discount</label>
+                <input th:field="*{discount}" type="text" class="col-md6 form-control form-control-sm" id="discount"
+                       placeholder="Enter discount">
+            </div>
+            <div class="form-group">
+                <label class="col-md2" for="offer">Offer</label>
+                <input th:field="*{offer}" type="text" class="col-md6 form-control form-control-sm" id="offer"
+                       placeholder="Enter offer">
+            </div>
+            <div class="form-group">
+                <label class="col-md2" for="category">Category</label>
+                <input th:field="*{category}" type="text" class="col-md6 form-control form-control-sm" id="category"
+                       placeholder="Enter category">
+            </div>
+            <div class="form-group">
+                <label class="col-md2" for="publisher">Publisher</label>
+                <input th:field="*{publisher}" type="text" class="col-md6 form-control form-control-sm" id="publisher"
+                       placeholder="Enter publisher">
+            </div>
+            <div class="form-group">
+                <label class="col-md2" for="PEGI">PEGI</label>
+                <input th:field="*{PEGI}" type="text" class="col-md6 form-control form-control-sm" id="PEGI"
+                       placeholder="Enter PEGI">
+            </div>
+            <div class="form-group">
+                <label class="col-md2" for="PEGIcontent">PEGI CONTENT</label>
+                <input th:field="*{PEGIcontent}" type="text" class="col-md6 form-control form-control-sm" id="PEGIcontent"
+                       placeholder="Enter PEGI CONTENT">
+            </div>
+        </form>
+    </section>
+    <footer th:replace="fragments/footer"></footer>
 </body>
