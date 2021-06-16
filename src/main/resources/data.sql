@@ -1,2 +1,0 @@
-INSERT INTO games(title, platform, yearr, cost, etiqueta, discount, offer, category, publisher, PEGI, PEGIcontent )
-VALUES ('Wii Sports', 'Wii', 2006, 19.99, 'super', 10, 10, 'games', 'Take-two', 7, 'violence'  );

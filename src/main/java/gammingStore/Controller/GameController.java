@@ -28,17 +28,16 @@ public class GameController {
         return "games/all";
     }
     @GetMapping("/games/new")
-    String newBook(Model model) {
+    String getForm(Model model) {
         Game game = new Game();
         model.addAttribute("game", game);
-        model.addAttribute("title", "Create new game");
         return "games/new";
 
     }
     @PostMapping("/games/new")
-    public String addBook(@ModelAttribute Game game) {
+    public String addGame(@ModelAttribute Game game) {
         gameService.save(game);
-        return "redirect:/gamess";
+        return "redirect:/games";
     }
     /*(document).ready(function(){
         $(".form-control").on("keyup", function() {

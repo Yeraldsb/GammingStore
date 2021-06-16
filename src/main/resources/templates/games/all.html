@@ -8,7 +8,6 @@
         <table class="table table-hover table-dark">
             <thead>
             <tr>
-                <th scope="col">Id</th>
                 <th scope="col">Title</th>
                 <th scope="col">Platform</th>
                 <th scope="col">Year</th>
@@ -24,8 +23,7 @@
             </thead>
             <tbody>
             <tr th:each="game: ${games}">
-                <th scope="row" th:text="${game.id}"></th>
-                <td th:text="${game.title}"></td>
+                <th scope="row" th:text="${game.title}"></th>
                 <td th:text="${game.platform}"></td>
                 <td th:text="${game.yearr}"></td>
                 <td th:text="${game.cost}"></td>

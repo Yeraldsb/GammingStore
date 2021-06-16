@@ -58,7 +58,7 @@ public class Game implements Serializable {
        return yearr;
     }
 
-    public void setYearr(Long year) {
+    public void setYearr(Long yearr) {
 
        this.yearr = yearr;
     }
@@ -137,7 +137,7 @@ public class Game implements Serializable {
        return PEGIcontent;
     }
 
-    public void setPEGIcontent(String pegIcontent) {
+    public void setPEGIcontent(String PEGIcontent) {
 
        this.PEGIcontent = PEGIcontent;
     }
