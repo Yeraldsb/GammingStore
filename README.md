@@ -1,4 +1,4 @@
-![alt text](https://github.com/Yeraldsb/bcnfemtech-p4-grupo6/master/src/main/resources/static/img/lg-logo.png?raw=true)
+![lg-logo](https://user-images.githubusercontent.com/79837222/122381704-82542380-cf69-11eb-97c3-d153e335727c.png)
 
 # Project Title
 Legacy Games Store
@@ -27,7 +27,7 @@ docker run --name postgres-container -e POSTGRES_PASSWORD=LG2021 -p 5432:5432 -e
 
 
 
-Contributors names and contact info
+## Contributors names and contact info
 
 Yeraldin Salazar
 
