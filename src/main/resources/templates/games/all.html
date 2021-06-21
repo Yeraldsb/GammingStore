@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head"></head>
 <body>
     <header th:replace="fragments/header"></header>
     <section class="container">
-        <h1 th:text="${title}"></h1>
-        <table class="table table-hover table-dark">
-            <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Title</th>
-                <th scope="col">Platform</th>
-                <th scope="col">Year</th>
-                <th scope="col">Price</th>
-                <th scope="col">Label</th>
-                <th scope="col">Discount</th>
-                <th scope="col">Offer</th>
-                <th scope="col">Category</th>
-                <th scope="col">Publisher</th>
-                <th scope="col">PEGI</th>
-                <th scope="col">PEGI Content</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="game: ${games}">
-                <th scope="row" th:text="${game.id}">1</th>
+        <div class="container mt-5 mb-5" th:each="game: ${games}">
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-10">
+                    <div class="row p-2 bg-white border rounded">
+                        <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/QpjAiHq.jpg"></div>
+                        <div class="col-md-6 mt-1">
+                            <h5 th:text="${game.title}">Mark</h5>
+                            <div class="d-flex flex-row">
+                                <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
+                            </div>
+                            <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
+                            <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
+                            <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
+                        </div>
+                        <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                            <div class="d-flex flex-row align-items-center">
+                                <h4 class="mr-1">$13.99</h4><span class="strike-text">$20.99</span>
+                            </div>
+                            <h6 class="text-success">Free shipping</h6>
+                            <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!--<tbody>
+
                 <td th:text="${game.title}"></td>
                 <td th:text="${game.platform}"></td>
                 <td th:text="${game.yearr}"></td>
@@ -48,7 +51,7 @@
 
             </tbody>
         </table>
+        -->
     </section>
-    <footer th:replace="fragments/footer"></footer>
 </body>
 </html>
