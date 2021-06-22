@@ -18,10 +18,13 @@ public class Game implements Serializable {
    private String etiqueta;
    private int discount;
    private double offer;
-   private String category;
    private String publisher;
    private Long PEGI;
    private String PEGIcontent;
+
+   @ManyToOne
+   @JoinColumn(name = "category_id")
+   private GameCategory category;
 
    public Long getId() {
 
@@ -103,11 +106,11 @@ public class Game implements Serializable {
         this.offer = offer;
     }
 
-    public String getCategory() {
+    public GameCategory getCategory() {
 
        return category;
     }
-    public void setCategory(String category) {
+    public void setCategory(GameCategory category) {
 
        this.category = category;
     }
