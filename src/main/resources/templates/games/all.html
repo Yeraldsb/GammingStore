@@ -10,6 +10,13 @@
                         <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/QpjAiHq.jpg"></div>
                         <div class="col-md-6 mt-1">
                             <h5 th:text="${game.title}">Mark</h5>
+                            <h6>Platform:</h6>
+                            <p th:text="${game.platform}" class="card__text">Mark<br><br></p>
+
+                            <h6>Platform: th:text="${game.platform}" class="text-justify text-truncate para mb-0"></h6>
+                            <h6 th:text="${game.yearr}" class="text-success">Mark</h6>
+                            <p th:text="${game.platform}" class="text-justify text-truncate para mb-0">Mark<br><br></p>
+
                             <div class="d-flex flex-row">
                                 <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
                             </div>
