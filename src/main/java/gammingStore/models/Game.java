@@ -1,5 +1,7 @@
 package gammingStore.models;
 
+
+
 import javax.persistence.*;
 import java.io.Serializable;
 

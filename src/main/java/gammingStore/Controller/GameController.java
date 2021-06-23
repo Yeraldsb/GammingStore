@@ -37,6 +37,7 @@ public class GameController {
         Game game = gameService.findById(id);
         model.addAttribute("game", game);
         model.addAttribute("title", "Edit game");
+        model.addAttribute("categories", categoryService.allCategories());
         return "games/edit";
     }
     @GetMapping("games/delete/{id}")
