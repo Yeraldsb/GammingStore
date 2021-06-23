@@ -5,9 +5,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface GameCategoryRepository {
+public interface CategoryRepository {
 
     @Repository
-    public interface GameRepository extends CrudRepository<GameCategory, Long> { }
+    public interface Category extends CrudRepository<Category, Long> { }
 
 }

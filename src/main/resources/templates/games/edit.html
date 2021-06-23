@@ -15,58 +15,9 @@
             </div>
             <legend class="col-form-label col-sm-2 pt-0">Platform</legend>
             <div class="col-sm-10">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1 inlineCheckbox1" value="option1" checked>
-                    <label class="form-check-label" for="gridRadios1 inlineCheckbox1">
-                        Wii
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2 inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="gridRadios2 inlineCheckbox2">
-                        X360
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3 inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="gridRadios3 inlineCheckbox3">
-                        NES
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4 inlineCheckbox4" value="option4">
-                    <label class="form-check-label" for="gridRadios4 inlineCheckbox4">
-                        GB
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios5 inlineCheckbox5" value="option5">
-                    <label class="form-check-label" for="gridRadios5 inlineCheckbox5">
-                        DS
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios6 inlineCheckbox6" value="option6">
-                    <label class="form-check-label" for="gridRadios6 inlineCheckbox6">
-                        PS3
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios7 inlineCheckbox7" value="option7">
-                    <label class="form-check-label" for="gridRadios7 inlineCheckbox7">
-                        PS2
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios8 inlineCheckbox8" value="option8">
-                    <label class="form-check-label" for="gridRadios8 inlineCheckbox8">
-                        SNES
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios9 inlineCheckbox9" value="option9">
-                    <label class="form-check-label" for="gridRadios9 inlineCheckbox9">
-                        GBA
+                <div class="form-check form-check-inline" th:each="category:${categories}">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1 inlineCheckbox1" th:value="${category.id}" checked>
+                    <label class="form-check-label" for="gridRadios1 inlineCheckbox1" th:value="${category.name}">
                     </label>
                 </div>
             </div>

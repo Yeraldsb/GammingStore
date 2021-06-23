@@ -1,6 +1,7 @@
 package gammingStore.Controller;
 
 import gammingStore.models.Game;
+import gammingStore.services.CategoryService;
 import gammingStore.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +15,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class GameController {
     private GameService gameService;
+    private CategoryService categoryService;
 
     @Autowired
-    public GameController(GameService gameService) {
+    public GameController(GameService gameService, CategoryService categoryService) {
         this.gameService = gameService;
+        this.categoryService = categoryService;
     }
 
     @GetMapping("/games/new")
@@ -25,6 +28,7 @@ public class GameController {
         Game game = new Game();
         model.addAttribute("game", game);
         model.addAttribute("title", "Create new game");
+        model.addAttribute("categories", categoryService.allCategories());
         return "games/edit";
 
     }

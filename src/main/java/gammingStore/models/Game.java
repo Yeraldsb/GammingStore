@@ -24,7 +24,7 @@ public class Game implements Serializable {
 
    @ManyToOne
    @JoinColumn(name = "category_id")
-   private GameCategory category;
+   private Category category;
 
    public Long getId() {
 
@@ -106,11 +106,11 @@ public class Game implements Serializable {
         this.offer = offer;
     }
 
-    public GameCategory getCategory() {
+    public Category getCategory() {
 
        return category;
     }
-    public void setCategory(GameCategory category) {
+    public void setCategory(Category category) {
 
        this.category = category;
     }
