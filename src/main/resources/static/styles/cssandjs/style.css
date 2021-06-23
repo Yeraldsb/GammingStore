@@ -63,3 +63,60 @@ h6 {
     font-size: 1rem;
 
 }
+
+.game-list {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.game-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+.final-price {
+    font-weight: bold;
+    font-size: 16px;
+    color: green;
+}
+.original-price {
+    font-weight: normal;
+    font-size: 14px;
+    color: red;
+    text-decoration:line-through;
+}
+.game {
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #C0C0C0;
+    padding: 10px;
+    transition-duration: 0.2s;
+    background-color: #f5f5f5;
+}
+.game:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 5px 2px 2px #fea905;
+}
+.game .img-container {
+    width: 80%;
+    height: 145px;
+    margin: auto;
+}
+.game .img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+.game .info {
+    margin: 10px 20px;
+    font-size: small;
+}
+.game .buttons {
+    margin-top: 10px;
+}
+.game-filters {
+    display: flex;
+}
+.game-filters li {
+    margin: 0 15px;
+}
