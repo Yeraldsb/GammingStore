@@ -14,63 +14,41 @@
                             <p th:text="${game.platform}" class="card__text">Mark<br><br></p>
                             <h6>Year:</h6>
                             <p th:text="${game.yearr}" class="card__text">Mark<br><br></p>
-                            <h6>Price:</h6>
-                            <p th:text="${game.cost}" class="card__text">Mark<br><br></p>
-                            <h6>Label:</h6>
-                            <p th:text="${game.etiqueta}" class="card__text">Mark<br><br></p>
-
-
                             <h6>Category:</h6>
-                            <p th:text="${game.category.name}" class="card__text">Mark<br><br></p>
+                            <p th:text="${game.category}" class="card__text">Mark<br><br></p>
+                            <h6>Publisher:</h6>
+                            <p th:text="${game.publisher}" class="card__text">Mark<br><br></p>
+                            <h6>PEGI</h6>
+                            <p th:text="${game.PEGI}" class="card__text">Mark<br><br></p>
+                            <h6>PEGIcontent</h6>
+                            <p th:text="${game.PEGIcontent}" class="card__text">Mark<br><br></p>
 
-
-
-                            <h6>Platform: th:text="${game.platform}" class="text-justify text-truncate para mb-0"></h6>
-                            <h6 th:text="${game.yearr}" class="text-success">Mark</h6>
-                            <p th:text="${game.platform}" class="text-justify text-truncate para mb-0">Mark<br><br></p>
-
-                            <div class="d-flex flex-row">
-                                <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
+                            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                                <div class="d-flex flex-row align-items-center">
+                                    <p th:text="${game.offer}" class="card__text">Mark<br><br></p><span th:text="${game.cost}" class="strike-text">Mark</span>
+                                </div>
+                                <h6>Label:</h6>
+                                <p th:text="${game.etiqueta}" class="card__text">Mark<br><br></p>
+                                <h6>Discount:</h6>
+                                <p th:text="${game.discount}" class="card__text">Mark<br><br></p>
                             </div>
-                            <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
-                            <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
-                            <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
-                        </div>
-                        <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+
+
+
+                            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                             <div class="d-flex flex-row align-items-center">
-                                <h4 class="mr-1">$13.99</h4><span class="strike-text">$20.99</span>
+                                <h4 th:text="${game.offer}" class="mr-1">Mark</h4><span th:text="${game.cost}" class="strike-text">Mark</span>
                             </div>
-                            <h6 class="text-success">Free shipping</h6>
-                            <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                            <div class="d-flex flex-column mt-4">
+                                <a class="btn btn-success btn-sm" th:href="'/games/edit/'+${game.id}">Edit</a>
+                                <a class="btn btn-danger btn-sm" th:href="'/games/delete/'+${game.id}">Delete</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-                <!--<tbody>
 
-                <td th:text="${game.title}"></td>
-                <td th:text="${game.platform}"></td>
-                <td th:text="${game.yearr}"></td>
-                <td th:text="${game.cost}"></td>
-                <td th:text="${game.etiqueta}"></td>
-                <td th:text="${game.discount}"></td>
-                <td th:text="${game.offer}"></td>
-                <td th:text="${game.category}"></td>
-                <td th:text="${game.publisher}"></td>
-                <td th:text="${game.PEGI}"></td>
-                <td th:text="${game.PEGIcontent}"></td>
-                <td>
-                    <a class="btn btn-success btn-sm" th:href="'/games/edit/'+${game.id}">Edit</a>
-                </td>
-                <td>
-                    <a class="btn btn-danger btn-sm" th:href="'/games/delete/'+${game.id}">Delete</a>
-                </td>
-            </tr>
-
-            </tbody>
-        </table>
-        -->
     </section>
 </body>
 </html>
