@@ -49,48 +49,72 @@ h3 {
     border: 1px solid #FC3727;
 }
 
-
-h5 {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-h6 {
-    font-size: 1rem;
-    font-weight: bold;
-    display: inline;
-}
-.card__text {
-    font-size: 1rem;
-
-}
-
-.game-list {
-    padding: 5px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.game-title {
-    font-weight: bold;
-    font-size: 18px;
-}
-.final-price {
-    font-weight: bold;
-    font-size: 16px;
-    color: green;
-}
-.original-price {
-    font-weight: normal;
-    font-size: 14px;
-    color: red;
-    text-decoration:line-through;
-}
 .game {
-    width: 200px;
+    display: flex;
+    width: auto;
     margin: 10px;
     border: 1px solid #C0C0C0;
     padding: 10px;
     transition-duration: 0.2s;
     background-color: #f5f5f5;
+}
+.game-list {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 19px;
+}
+.game-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.game-subtitles {
+    font-weight: bold;
+    sont-size:15px;
+}
+.prices-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+    padding-top: 20px;
+
+
+}
+.discount {
+    font-weight: lighter;
+    font-size: 37px;
+    color: #fc4921;
+    margin-bottom: 2px;
+}
+.discount-label {
+    font-weight: lighter;
+    font-size: 14px;
+    color: #fc4921;
+    margin-bottom: 20px;
+}
+.original-price {
+    font-weight: lighter;
+    font-size: 24px;
+    color: #d0d0d0;
+    text-decoration:line-through;
+    margin-bottom: 34px;
+}
+.final-price {
+    font-weight: bold;
+    font-size: 45px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    padding-top: 30px;
+}
+.btn-success {
+    margin-bottom: 20px;
 }
 .game:hover {
     transform: translate(2px, 2px);
