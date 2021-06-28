@@ -14,19 +14,25 @@ public class Game implements Serializable {
    @GeneratedValue(strategy = SEQUENCE)
    private Long id;
    private String title;
-   private String platform;
    private Long yearr;
    private double cost;
    private String etiqueta;
    private int discount;
    private double offer;
-   private String publisher;
    private Long PEGI;
    private String PEGIcontent;
 
    @ManyToOne
    @JoinColumn(name = "category_id")
    private Category category;
+
+   @ManyToOne
+   @JoinColumn(name = "publisher_id")
+   private Publisher publisher;
+
+   @ManyToOne
+   @JoinColumn(name="platform_id")
+   private Platform platform;
 
    public Long getId() {
 
@@ -48,12 +54,12 @@ public class Game implements Serializable {
        this.title = title;
     }
 
-    public String getPlatform() {
+    public Platform getPlatform() {
 
        return platform;
     }
 
-    public void setPlatform(String platform) {
+    public void setPlatform(Platform platform) {
 
        this.platform = platform;
     }
@@ -117,12 +123,12 @@ public class Game implements Serializable {
        this.category = category;
     }
 
-    public String getPublisher() {
+    public Publisher getPublisher() {
 
        return publisher;
     }
 
-    public void setPublisher(String publisher) {
+    public void setPublisher(Publisher publisher) {
 
        this.publisher = publisher;
     }

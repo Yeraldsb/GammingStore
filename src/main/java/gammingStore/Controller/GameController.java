@@ -29,6 +29,8 @@ public class GameController {
         model.addAttribute("game", game);
         model.addAttribute("title", "Create new game");
         model.addAttribute("categories", categoryService.allCategories());
+        model.addAttribute("platform", publisherService.allCategories());
+        model.addAttribute("categories", platformService.allCategories());
         return "games/edit";
 
     }
@@ -37,6 +39,8 @@ public class GameController {
         Game game = gameService.findById(id);
         model.addAttribute("game", game);
         model.addAttribute("title", "Edit game");
+        model.addAttribute("categories", categoryService.allCategories());
+        model.addAttribute("categories", categoryService.allCategories());
         model.addAttribute("categories", categoryService.allCategories());
         return "games/edit";
     }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head th:replace="fragments/head"></head>
 <body class="d-flex flex-column h-100">
     <header th:replace="fragments/header"></header>
@@ -13,8 +13,14 @@
                        placeholder="Enter title">
                 <div class="form-group">
                     <label class="col-md2" for="platform">Platform</label>
-                    <input th:field="*{platform}" type="text" class="col-md6 form-control form-control-sm" id="platform"
-                           placeholder="Enter platform">
+                    <select th:field="*{platform}" type="text" class="col-md6 form-control form-control-sm" id="platform">
+                        <option th:each="platform: ${platforms}"
+                                th:value="${platform.id}"
+                                th:text="${platform.name}"
+                        >
+                        </option>
+                    </select>
+
                 </div>
             <div class="form-group">
                 <label class="col-md2" for="yearr">Year</label>
@@ -53,8 +59,12 @@
             </div>
             <div class="form-group">
                 <label class="col-md2" for="publisher">Publisher</label>
-                <input th:field="*{publisher}" type="text" class="col-md6 form-control form-control-sm" id="publisher"
-                       placeholder="Enter publisher">
+                <select th:field="*{publisher}" type="text" class="col-md6 form-control form-control-sm" id="publisher">
+                    <option th:each="publisher: ${categories}"
+                            th:value="${publisher.id}"
+                            th:text="${publisher.name}"
+                    >
+                </select>
             </div>
             <div class="form-group">
                 <label class="col-md2" for="PEGI">PEGI</label>
