@@ -8,18 +8,29 @@
             <div class="game" th:each="game: ${games}">
                 <div class="info">
                     <div class="game-title" th:text="${game.title}">Mark</div>
+
                     <div class="game-subtitles">PLATFORM</div>
-                    <div th:text="${game.platform}">Mark</div>
+                    <div th:text="${game.platform.name}">Mark</div>
+
                     <div class="game-subtitles">YEAR</div>
                     <div th:text="${game.yearr}">Mark</div>
+
+                    <div class="game-subtitles">ETIQUETA</div>
+                    <div th:text="${game.etiqueta.name}">Mark</div>
+
                     <div class="game-subtitles">CATEGORY</div>
                     <div th:text="${game.category.name}">Mark</div>
+
                     <div class="game-subtitles">PUBLISHER</div>
-                    <div th:text="${game.publisher}">Mark</div>
-                    <div class="game-subtitles">PEGI CONTENT</div>
-                    <div th:text="${game.PEGIcontent}">Mark</div>
+                    <div th:text="${game.publisher.name}">Mark</div>
+
                     <div class="game-subtitles">PEGI</div>
-                    <div th:text="${game.PEGI}">Mark</div>
+                    <div th:text="${game.pegi.name}">Mark</div>
+
+                    <div class="game-subtitles">PEGI CONTENT</div>
+                    <div th:text="${game.PEGIcontent.name}">Mark</div>
+
+
 
                 </div>
                 <div class="prices-container">

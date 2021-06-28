@@ -16,11 +16,9 @@ public class Game implements Serializable {
    private String title;
    private Long yearr;
    private double cost;
-   private String etiqueta;
    private int discount;
    private double offer;
-   private Long PEGI;
-   private String PEGIcontent;
+
 
    @ManyToOne
    @JoinColumn(name = "category_id")
@@ -33,6 +31,18 @@ public class Game implements Serializable {
    @ManyToOne
    @JoinColumn(name="platform_id")
    private Platform platform;
+
+   @ManyToOne
+   @JoinColumn(name ="etiquetas_id")
+   private Etiqueta etiqueta;
+
+   @ManyToOne
+   @JoinColumn(name ="pegi_id")
+   private Pegi pegi;
+
+   @ManyToOne
+   @JoinColumn(name ="PEGIcontent_id")
+   private PEGIcontent PEGIcontent;
 
    public Long getId() {
 
@@ -84,11 +94,11 @@ public class Game implements Serializable {
        this.cost = cost;
     }
 
-    public String getEtiqueta() {
+    public Etiqueta getEtiqueta() {
 
        return etiqueta;
     }
-    public void setEtiqueta(String etiqueta) {
+    public void setEtiqueta(Etiqueta etiqueta) {
 
        this.etiqueta = etiqueta;
     }
@@ -133,22 +143,22 @@ public class Game implements Serializable {
        this.publisher = publisher;
     }
 
-    public Long getPEGI() {
+    public Pegi getPegi() {
 
-       return PEGI;
+       return pegi;
     }
 
-    public void setPEGI(Long PEGI) {
+    public void setPegi(Pegi pegi) {
 
-       this.PEGI = PEGI;
+       this.pegi = pegi;
     }
 
-    public String getPEGIcontent() {
+    public PEGIcontent getPEGIcontent() {
 
        return PEGIcontent;
     }
 
-    public void setPEGIcontent(String PEGIcontent) {
+    public void setPEGIcontent(PEGIcontent PEGIcontent) {
 
        this.PEGIcontent = PEGIcontent;
     }
@@ -166,7 +176,7 @@ public class Game implements Serializable {
                ", offer='" + offer + '\'' +
                ", category='" + category + '\'' +
                ", publisher='" + publisher + '\'' +
-               ", PEGI='" + PEGI + '\'' +
+               ", pegi='" + pegi + '\'' +
                ", PEGIcontent='" + PEGIcontent + '\'' +
                '}';
     }

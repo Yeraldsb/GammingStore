@@ -33,9 +33,13 @@
                        placeholder="Enter price">
             </div>
             <div class="form-group">
-                <label class="col-md2" for="etiqueta">Label</label>
-                <input th:field="*{etiqueta}" type="text" class="col-md6 form-control form-control-sm" id="etiqueta"
-                       placeholder="Enter etiqueta">
+                <label class="col-md2" for="etiqueta">Etiqueta</label>
+                <select th:field="*{etiqueta}" type="text" class="col-md6 form-control form-control-sm" id="etiqueta">
+                        <option th:each="etiqueta: ${etiquetas}"
+                                th:value="${etiqueta.id}"
+                                th:text="${etiqueta.name}"
+                        >
+                </select>
             </div>
             <div class="form-group">
                 <label class="col-md2" for="discount">Discount</label>
@@ -67,17 +71,26 @@
                 </select>
             </div>
             <div class="form-group">
-                <label class="col-md2" for="PEGI">PEGI</label>
-                <input th:field="*{PEGI}" type="text" class="col-md6 form-control form-control-sm" id="PEGI"
-                       placeholder="Enter PEGI">
+                <label class="col-md2" for="pegi">PEGI</label>
+                <select th:field="*{pegi}" type="text" class="col-md6 form-control form-control-sm" id="pegi">
+                    <option th:each="pegi: ${pegis}"
+                            th:value="${pegi.id}"
+                            th:text="${pegi.name}"
+                    >
+                </select>
             </div>
             <div class="form-group">
                 <label class="col-md2" for="PEGIcontent">PEGI CONTENT</label>
-                <input th:field="*{PEGIcontent}" type="text" class="col-md6 form-control form-control-sm" id="PEGIcontent"
-                       placeholder="Enter PEGI CONTENT">
+                <select th:field="*{PEGIcontent}" type="text" class="col-md6 form-control form-control-sm" id="PEGIcontent">
+                    <option th:each="PEGIcontent: ${PEGIcontents}"
+                            th:value="${PEGIcontent.id}"
+                            th:text="${PEGIcontent.name}"
+                    >
+                </select>
             </div>
             <div class="card-footer ">
                 <input type="submit" class="btn btn-primary btn-sm" value="Save"/>
+            </div>
             </div>
         </form>
     </section>
