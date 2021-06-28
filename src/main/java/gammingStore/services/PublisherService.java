@@ -20,7 +20,7 @@ public class PublisherService {
         this.publisherRepository = publisherRepository;
     }
 
-    public List<Publisher> allCategories() {
+    public List<Publisher> allPublishers() {
         return (List<Publisher>) publisherRepository.findAll();
     }
 }

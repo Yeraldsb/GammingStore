@@ -60,7 +60,7 @@
             <div class="form-group">
                 <label class="col-md2" for="publisher">Publisher</label>
                 <select th:field="*{publisher}" type="text" class="col-md6 form-control form-control-sm" id="publisher">
-                    <option th:each="publisher: ${categories}"
+                    <option th:each="publisher: ${publishers}"
                             th:value="${publisher.id}"
                             th:text="${publisher.name}"
                     >

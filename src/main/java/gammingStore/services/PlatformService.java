@@ -16,7 +16,7 @@ public class PlatformService {
         this.platformRepository = platformRepository;
     }
 
-    public List<Platform> allCategories() {
+    public List<Platform> allPlatforms() {
         return (List<Platform>) platformRepository.findAll();
     }
 }

@@ -3,6 +3,8 @@ package gammingStore.Controller;
 import gammingStore.models.Game;
 import gammingStore.services.CategoryService;
 import gammingStore.services.GameService;
+import gammingStore.services.PlatformService;
+import gammingStore.services.PublisherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,11 +18,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class GameController {
     private GameService gameService;
     private CategoryService categoryService;
+    private PublisherService publisherService;
+    private PlatformService platformService;
 
     @Autowired
     public GameController(GameService gameService, CategoryService categoryService) {
         this.gameService = gameService;
         this.categoryService = categoryService;
+        this.publisherService = publisherService;
+        this.platformService = platformService;
     }
 
     @GetMapping("/games/new")
@@ -29,8 +35,8 @@ public class GameController {
         model.addAttribute("game", game);
         model.addAttribute("title", "Create new game");
         model.addAttribute("categories", categoryService.allCategories());
-        model.addAttribute("platform", publisherService.allCategories());
-        model.addAttribute("categories", platformService.allCategories());
+        model.addAttribute("publisher", publisherService.allPublishers());
+        model.addAttribute("platform", platformService.allPlatforms());
         return "games/edit";
 
     }
@@ -40,8 +46,8 @@ public class GameController {
         model.addAttribute("game", game);
         model.addAttribute("title", "Edit game");
         model.addAttribute("categories", categoryService.allCategories());
-        model.addAttribute("categories", categoryService.allCategories());
-        model.addAttribute("categories", categoryService.allCategories());
+        model.addAttribute("publisher", publisherService.allPublishers());
+        model.addAttribute("platform", platformService.allPlatforms());
         return "games/edit";
     }
     @GetMapping("games/delete/{id}")
