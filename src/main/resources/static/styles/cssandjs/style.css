@@ -1,14 +1,58 @@
+/*LINKS*/
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: #FC3727;
+}
+
+/*BUTTONS*/
+
+.btn__outline--orange, .btn__outline--white {
+    margin: 0 0 20px 0;
+    color: #FC3727;
+    border: 1px solid #FC3727;
+    border-radius: 20px;
+    padding: 5px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+.btn__outline--white {
+    color: #FFF;
+    border: 1px solid #FFF;
+    background-color: transparent;
+    margin: 0;
+}
+.btn__outline--orange:hover, .btn__outline--white:hover {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+    font-weight: bold;
+}
+.btn__outline--white:hover {
+    background-color: transparent;
+    border: 1px solid #FFF;
+}
+/*HEADER*/
+
+/*NAV BAR*/
 .navbar {
     background-image: linear-gradient(to top, #FC3727 0%, #FFAA05 100%);
     width: 100%;
     margin: 0;
     padding: 0;
+    align-items: baseline;
+}
+.container-fluid {
+    display: flex;
+    align-items: center;
 }
 .logo {
     width: 100px;
 }
 .navbar-nav .nav-item .nav-link {
     color: #FFF;
+    text-transform: uppercase;
+    padding: 0 20px;
 }
 .navbar-nav .nav-item .nav-link:hover {
     font-weight: bold;
@@ -18,64 +62,154 @@
     color: #FFF;
     font-weight: bold;
 }
-.d-flex .btn {
-    border: 1px solid #FFF;
-    color: #FFF;
+.search-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.d-flex {
+    align-items: center;
+}
+.input-box {
+    border: 1px solid #CCC;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    padding: 5px 20px;
+    text-align: left;
+}
+[type="search"]:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
 .nav-login {
     color: #FFF;
-    padding: 0 20px;
+    margin: 0 20px 0 40px;
+    padding: 0 40px;
     text-decoration: none;
+    background-image: url("/img/user.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    line-height: 2.15rem;
+    text-transform: lowercase;
 }
 .nav-login:hover {
     color: #FFF;
     font-weight: bold;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
 }
-.container {
-    padding: 50px 30px;
-    width: 100%;
+
+/*MAIN*/
+main {
+    background-color: rgba(231, 231, 231, 0.3);
 }
-h3 {
+/*SECTION*/
+section {
+    padding: 70px 100px;
+}
+.section__title {
+    font-size: 2rem;
     margin-bottom: 50px;
+    color: #000;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+
+/*GAMES*/
+
+.game__item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border: 1px solid #CCC;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    margin-bottom: 20px;
+}
+.game__img {
+    margin-right: 20px;
+    max-width: 25%;
+}
+.game__img img {
+    border: 1px solid #CCC;
+    border-radius: 20px;
+    margin-right: 30px;
+    max-height: 180px;
+    max-width: 250px;
+    padding: 15px 0;
+}
+.game__info {
+    justify-content: left;
+    max-width: 50%;
+}
+.game__title {
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+}
+.game__subtitle {
+    font-weight: bold;
+    font-size: 1rem;
+}
+.game__text {
+    text-transform: capitalize;
+    font-weight: normal;
+}
+.game__details {
+    border-left: 1px solid #CCC;
+    padding: 0 20px;
+    text-align: center;
+    max-width: 25%;
+}
+.game__prices {
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-top: 1px solid #fc4921;
+    border-bottom: 1px solid #fc4921;
+}
+.game__prices--discount {
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1rem;
+    color: #fc4921;
+}
+.game__prices--discountLabel {
+    font-weight: 200;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #fc4921;
+}
+.game__prices--original {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    color: #666;
+    text-decoration: line-through;
+}
+.game__prices--final {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1.5rem;
+    color: #000000;
+}
+.game__edit {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+/*FOOTER*/
+footer {
+    background-color: #333;
+    color: #FFF;
+    padding: 10px 0;
 }
 .fixed-bottom {
     text-align: center;
     padding: 5px;
     position: relative;
-}
-.btn__submit, .btn-success, .btn-danger {
-    margin: 30px 0;
-    color: #FC3727;
-    border: 1px solid #FC3727;
-}
-
-h5 {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-h6 {
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-section {
-    padding: 20px 50px;
-}
-.card__item {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid #CCCCCC;
-    border-radius: 10%;
-    padding: 20px;
-    align-items: center;
-}
-.card__img, .card__prices {
-    card
-}
-.card__features {
-    display: flex;
-    width: 40%;
-}
-.card__text {
-    font-size: 1rem;
 }

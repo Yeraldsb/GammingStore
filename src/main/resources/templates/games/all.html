@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-    <!--<header th:replace="fragments/header"></header>-->
-    <section class="card__container">
-        <div class"card__item">
-            <div class="card__title" th:each="game: ${games}">
-                <div class="card__img"><img src="https://i.imgur.com/QpjAiHq.jpg"></div>
-                <div class="card__features">
-                    <h5 th:text="${game.title}">Mark</h5>
-                    <h6>Platform:</h6>
-                    <p th:text="${game.platform}" class="card__text">Mark<br><br></p>
-                    <h6>Year:</h6>
-                    <p th:text="${game.yearr}" class="card__text">Mark<br><br></p>
-                    <h6>Category:</h6>
-                    <p th:text="${game.category}" class="card__text">Mark<br><br></p>
-                    <h6>Publisher:</h6>
-                    <p th:text="${game.publisher}" class="card__text">Mark<br><br></p>
-                    <h6>PEGI</h6>
-                    <p th:text="${game.PEGI}" class="card__text">Mark<br><br></p>
-                    <h6>PEGIcontent</h6>
-                    <p th:text="${game.PEGIcontent}" class="card__text">Mark<br><br></p>
-                </div>
-                <div class="card__prices">
-                    <h4 th:text="${game.offer}" class="mr-1">Mark</h4><span th:text="${game.cost}" class="strike-text">Mark</span>
-                </div>
-                <div class="card__buttons">
-                    <a class="btn btn-success btn-sm" th:href="'/games/edit/'+${game.id}">Edit</a>
-                    <a class="btn btn-danger btn-sm" th:href="'/games/delete/'+${game.id}">Delete</a>
+<!--<header th:replace="fragments/header"></header>-->
+    <main>
+        <section>
+            <h1 class="section__title" th:text="${title}"></h1>
+            <div class="game__list">
+                <div class="game__item" th:each="game: ${games}">
+                    <div class="game__img">
+                        <img src="/img/gta.png" alt="GTA V_game cover">
+                    </div>
+                    <div class="game__info">
+                        <div class="game__title" th:text="${game.title}">Mark</div>
+                        <div class="game__subtitle">Platform: <span class="game__text" th:text="${game.platform}">Mark</span></div>
+                        <div class="game__subtitle">Year: <span class="game__text" th:text="${game.yearr}">Mark</span></div>
+                        <div class="game__subtitle">Category: <span class="game__text" th:text="${game.category}">Mark</span></div>
+                        <div class="game__subtitle">Publisher: <span class="game__text" th:text="${game.publisher}">Mark</span></div>
+                        <div class="game__subtitle">PEGI Content: <span class="game__text" th:text="${game.PEGIcontent}">Mark</span></div>
+                        <div class="game__subtitle">PEGI: <span class="game__text" th:text="${game.PEGI}">Mark</span></div>
+                    </div>
+                    <div class="game__details">
+                        <div class="game__prices">
+                            <div class="game__prices--discount" th:text="${game.discount}">Mark</div>
+                            <div class="game__prices--discountLabel" th:text="${game.etiqueta}">Mark</div>
+                            <div class="game__prices--original" th:text="${game.cost}">Mark</div>
+                            <div class="game__prices--final" th:text="${game.offer}">Mark</div>
+                        </div>
+                        <div class="game__edit">
+                            <a class="btn__outline--orange" th:href="'/games/edit/'+${game.id}">Edit game</a>
+                            <a class="btn__outline--orange" th:href="'/games/delete/'+${game.id}">Delete game</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 </body>
 </html>
+
