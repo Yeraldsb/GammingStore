@@ -1,50 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-    <!--<header th:replace="fragments/header"></header>-->
-    <section class="container">
-        <h1 th:text="${title}"></h1>
-        <div class="game-list">
-            <div class="game" th:each="game: ${games}">
-                <div class="info">
-                    <div class="game-title" th:text="${game.title}">Mark</div>
-
-                    <div class="game-subtitles">PLATFORM</div>
-                    <div th:text="${game.platform.name}">Mark</div>
-
-                    <div class="game-subtitles">YEAR</div>
-                    <div th:text="${game.yearr}">Mark</div>
-
-                    <div class="game-subtitles">ETIQUETA</div>
-                    <div th:text="${game.etiqueta.name}">Mark</div>
-
-                    <div class="game-subtitles">CATEGORY</div>
-                    <div th:text="${game.category.name}">Mark</div>
-
-                    <div class="game-subtitles">PUBLISHER</div>
-                    <div th:text="${game.publisher.name}">Mark</div>
-
-                    <div class="game-subtitles">PEGI</div>
-                    <div th:text="${game.pegi.name}">Mark</div>
-
-                    <div class="game-subtitles">PEGI CONTENT</div>
-                    <div th:text="${game.PEGIcontent.name}">Mark</div>
-
-
-
-                </div>
-                <div class="prices-container">
-                    <div class="discount" th:text="${game.discount}">Mark</div>
-                    <div class="discount-label" th:text="${game.etiqueta}">Mark</div>
-                    <div class="original-price" th:text="${game.cost}">Mark</div>
-                    <div class="final-price" th:text="${game.offer}">Mark</div>
-                </div>
-                <div class="buttons">
-                    <a class="btn btn-success btn-sm" th:href="'/games/edit/'+${game.id}">Edit</a>
-                    <a class="btn btn-danger btn-sm" th:href="'/games/delete/'+${game.id}">Delete</a>
+<!--<header th:replace="fragments/header"></header>-->
+    <main>
+        <section>
+            <h1 class="section__title" th:text="${title}"></h1>
+            <div class="game__list">
+                <div class="game__item" th:each="game: ${games}">
+                    <div class="game__img">
+                        <img src="/img/gta.png" alt="GTA V_game cover">
+                    </div>
+                    <div class="game__info">
+                        <div class="game__title" th:text="${game.title}">Mark</div>
+                        <div class="game__subtitle">Platform: <span class="game__text" th:text="${game.platform}">Mark</span></div>
+                        <div class="game__subtitle">Year: <span class="game__text" th:text="${game.yearr}">Mark</span></div>
+                        <div class="game__subtitle">Category: <span class="game__text" th:text="${game.category}">Mark</span></div>
+                        <div class="game__subtitle">Publisher: <span class="game__text" th:text="${game.publisher}">Mark</span></div>
+                        <div class="game__subtitle">PEGI Content: <span class="game__text" th:text="${game.PEGIcontent}">Mark</span></div>
+                        <div class="game__subtitle">PEGI: <span class="game__text" th:text="${game.PEGI}">Mark</span></div>
+                    </div>
+                    <div class="game__details">
+                        <div class="game__prices">
+                            <div class="game__prices--discount" th:text="${game.discount}">Mark</div>
+                            <div class="game__prices--discountLabel" th:text="${game.etiqueta}">Mark</div>
+                            <div class="game__prices--original" th:text="${game.cost}">Mark</div>
+                            <div class="game__prices--final" th:text="${game.offer}">Mark</div>
+                        </div>
+                        <div class="game__edit">
+                            <a class="btn__outline--orange" th:href="'/games/edit/'+${game.id}">Edit game</a>
+                            <a class="btn__outline--orange" th:href="'/games/delete/'+${game.id}">Delete game</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 </body>
 </html>
+
