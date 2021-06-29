@@ -5,14 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "categories")
-public class GameCategory {
+@Table(name = "PEGIcontents")
+public class PEGIcontent {
 
     @Id
-    @GeneratedValue(strategy = SEQUENCE)
+    @GeneratedValue(strategy = IDENTITY)
     private Long id;
     private String name;
 

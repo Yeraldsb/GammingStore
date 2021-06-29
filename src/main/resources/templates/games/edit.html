@@ -1,75 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head th:replace="fragments/head"></head>
 <body class="d-flex flex-column h-100">
     <header th:replace="fragments/header"></header>
     <section class="container">
         <h1 th:text="${title}"></h1>
-        <h3>Add a new game</h3>
         <form th:action="@{/games/new}" th:object="${game}" method="post">
             <div class="form-group">
                 <input type="hidden" th:field="*{id}">
                 <label class="col-md2" for="title">Title</label>
                 <input th:field="*{title}" type="text" class="col-md6 form-control form-control-sm" id="title"
                        placeholder="Enter title">
-            </div>
-            <legend class="col-form-label col-sm-2 pt-0">Platform</legend>
-            <div class="col-sm-10">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1 inlineCheckbox1" value="option1" checked>
-                    <label class="form-check-label" for="gridRadios1 inlineCheckbox1">
-                        Wii
-                    </label>
+                <div class="form-group">
+                    <label class="col-md2" for="platform">Platform</label>
+                    <select th:field="*{platform}" type="text" class="col-md6 form-control form-control-sm" id="platform">
+                        <option th:each="platform: ${platforms}"
+                                th:value="${platform.id}"
+                                th:text="${platform.name}"
+                        >
+                        </option>
+                    </select>
+
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2 inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="gridRadios2 inlineCheckbox2">
-                        X360
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3 inlineCheckbox3" value="option3">
-                    <label class="form-check-label" for="gridRadios3 inlineCheckbox3">
-                        NES
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4 inlineCheckbox4" value="option4">
-                    <label class="form-check-label" for="gridRadios4 inlineCheckbox4">
-                        GB
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios5 inlineCheckbox5" value="option5">
-                    <label class="form-check-label" for="gridRadios5 inlineCheckbox5">
-                        DS
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios6 inlineCheckbox6" value="option6">
-                    <label class="form-check-label" for="gridRadios6 inlineCheckbox6">
-                        PS3
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios7 inlineCheckbox7" value="option7">
-                    <label class="form-check-label" for="gridRadios7 inlineCheckbox7">
-                        PS2
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios8 inlineCheckbox8" value="option8">
-                    <label class="form-check-label" for="gridRadios8 inlineCheckbox8">
-                        SNES
-                    </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios9 inlineCheckbox9" value="option9">
-                    <label class="form-check-label" for="gridRadios9 inlineCheckbox9">
-                        GBA
-                    </label>
-                </div>
-            </div>
             <div class="form-group">
                 <label class="col-md2" for="yearr">Year</label>
                 <input th:field="*{yearr}" type="text" class="col-md6 form-control form-control-sm" id="yearr"
@@ -81,9 +33,13 @@
                        placeholder="Enter price">
             </div>
             <div class="form-group">
-                <label class="col-md2" for="etiqueta">Label</label>
-                <input th:field="*{etiqueta}" type="text" class="col-md6 form-control form-control-sm" id="etiqueta"
-                       placeholder="Enter etiqueta">
+                <label class="col-md2" for="etiqueta">Etiqueta</label>
+                <select th:field="*{etiqueta}" type="text" class="col-md6 form-control form-control-sm" id="etiqueta">
+                        <option th:each="etiqueta: ${etiquetas}"
+                                th:value="${etiqueta.id}"
+                                th:text="${etiqueta.name}"
+                        >
+                </select>
             </div>
             <div class="form-group">
                 <label class="col-md2" for="discount">Discount</label>
@@ -97,26 +53,44 @@
             </div>
             <div class="form-group">
                 <label class="col-md2" for="category">Category</label>
-                <input th:field="*{category}" type="text" class="col-md6 form-control form-control-sm" id="category"
-                       placeholder="Enter category">
+                <select th:field="*{category}" type="text" class="col-md6 form-control form-control-sm" id="category">
+                    <option th:each="category: ${categories}"
+                            th:value="${category.id}"
+                            th:text="${category.name}"
+                    >
+                    </option>
+                </select>
             </div>
             <div class="form-group">
                 <label class="col-md2" for="publisher">Publisher</label>
-                <input th:field="*{publisher}" type="text" class="col-md6 form-control form-control-sm" id="publisher"
-                       placeholder="Enter publisher">
+                <select th:field="*{publisher}" type="text" class="col-md6 form-control form-control-sm" id="publisher">
+                    <option th:each="publisher: ${publishers}"
+                            th:value="${publisher.id}"
+                            th:text="${publisher.name}"
+                    >
+                </select>
             </div>
             <div class="form-group">
-                <label class="col-md2" for="PEGI">PEGI</label>
-                <input th:field="*{PEGI}" type="text" class="col-md6 form-control form-control-sm" id="PEGI"
-                       placeholder="Enter PEGI">
+                <label class="col-md2" for="pegi">PEGI</label>
+                <select th:field="*{pegi}" type="text" class="col-md6 form-control form-control-sm" id="pegi">
+                    <option th:each="pegi: ${pegis}"
+                            th:value="${pegi.id}"
+                            th:text="${pegi.name}"
+                    >
+                </select>
             </div>
             <div class="form-group">
                 <label class="col-md2" for="PEGIcontent">PEGI CONTENT</label>
-                <input th:field="*{PEGIcontent}" type="text" class="col-md6 form-control form-control-sm" id="PEGIcontent"
-                       placeholder="Enter PEGI CONTENT">
+                <select th:field="*{PEGIcontent}" type="text" class="col-md6 form-control form-control-sm" id="PEGIcontent">
+                    <option th:each="PEGIcontent: ${PEGIcontents}"
+                            th:value="${PEGIcontent.id}"
+                            th:text="${PEGIcontent.name}"
+                    >
+                </select>
             </div>
             <div class="card-footer ">
                 <input type="submit" class="btn btn-primary btn-sm" value="Save"/>
+            </div>
             </div>
         </form>
     </section>

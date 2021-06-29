@@ -4,10 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-@Service
-public interface GameCategoryRepository {
+@Repository
+public interface PEGIcontentRepository extends CrudRepository<PEGIcontent, Long> { }
 
-    @Repository
-    public interface GameRepository extends CrudRepository<GameCategory, Long> { }
-
-}

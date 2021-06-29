@@ -1,5 +1,7 @@
 package gammingStore.models;
 
+
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -12,19 +14,35 @@ public class Game implements Serializable {
    @GeneratedValue(strategy = SEQUENCE)
    private Long id;
    private String title;
-   private String platform;
    private Long yearr;
    private double cost;
-   private String etiqueta;
    private int discount;
    private double offer;
-   private String publisher;
-   private Long PEGI;
-   private String PEGIcontent;
+
 
    @ManyToOne
    @JoinColumn(name = "category_id")
-   private GameCategory category;
+   private Category category;
+
+   @ManyToOne
+   @JoinColumn(name = "publisher_id")
+   private Publisher publisher;
+
+   @ManyToOne
+   @JoinColumn(name="platform_id")
+   private Platform platform;
+
+   @ManyToOne
+   @JoinColumn(name ="etiquetas_id")
+   private Etiqueta etiqueta;
+
+   @ManyToOne
+   @JoinColumn(name ="pegi_id")
+   private Pegi pegi;
+
+   @ManyToOne
+   @JoinColumn(name ="PEGIcontent_id")
+   private PEGIcontent PEGIcontent;
 
    public Long getId() {
 
@@ -46,12 +64,12 @@ public class Game implements Serializable {
        this.title = title;
     }
 
-    public String getPlatform() {
+    public Platform getPlatform() {
 
        return platform;
     }
 
-    public void setPlatform(String platform) {
+    public void setPlatform(Platform platform) {
 
        this.platform = platform;
     }
@@ -76,11 +94,11 @@ public class Game implements Serializable {
        this.cost = cost;
     }
 
-    public String getEtiqueta() {
+    public Etiqueta getEtiqueta() {
 
        return etiqueta;
     }
-    public void setEtiqueta(String etiqueta) {
+    public void setEtiqueta(Etiqueta etiqueta) {
 
        this.etiqueta = etiqueta;
     }
@@ -106,41 +124,41 @@ public class Game implements Serializable {
         this.offer = offer;
     }
 
-    public GameCategory getCategory() {
+    public Category getCategory() {
 
        return category;
     }
-    public void setCategory(GameCategory category) {
+    public void setCategory(Category category) {
 
        this.category = category;
     }
 
-    public String getPublisher() {
+    public Publisher getPublisher() {
 
        return publisher;
     }
 
-    public void setPublisher(String publisher) {
+    public void setPublisher(Publisher publisher) {
 
        this.publisher = publisher;
     }
 
-    public Long getPEGI() {
+    public Pegi getPegi() {
 
-       return PEGI;
+       return pegi;
     }
 
-    public void setPEGI(Long PEGI) {
+    public void setPegi(Pegi pegi) {
 
-       this.PEGI = PEGI;
+       this.pegi = pegi;
     }
 
-    public String getPEGIcontent() {
+    public PEGIcontent getPEGIcontent() {
 
        return PEGIcontent;
     }
 
-    public void setPEGIcontent(String PEGIcontent) {
+    public void setPEGIcontent(PEGIcontent PEGIcontent) {
 
        this.PEGIcontent = PEGIcontent;
     }
@@ -158,7 +176,7 @@ public class Game implements Serializable {
                ", offer='" + offer + '\'' +
                ", category='" + category + '\'' +
                ", publisher='" + publisher + '\'' +
-               ", PEGI='" + PEGI + '\'' +
+               ", pegi='" + pegi + '\'' +
                ", PEGIcontent='" + PEGIcontent + '\'' +
                '}';
     }
