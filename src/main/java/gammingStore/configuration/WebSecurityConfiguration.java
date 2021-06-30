@@ -10,7 +10,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/", "/games/","/data/**/**", "/img/**", "/css/style.css", "/js/**",  "/login").permitAll()
+                .antMatchers("/", "/games/","/data/**/**", "/img/**", "/css/style.css", "/js/**",  "/login", "/gammingStore/configuration/MvcConfig.java").permitAll()
                 .anyRequest().authenticated()
                 .and().formLogin().permitAll()
                 .and().logout().permitAll();

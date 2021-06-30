@@ -18,6 +18,7 @@ public class Game implements Serializable {
    private double cost;
    private int discount;
    private double offer;
+   private String photo;
 
 
    @ManyToOne
@@ -162,6 +163,13 @@ public class Game implements Serializable {
 
        this.PEGIcontent = PEGIcontent;
     }
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
     @Override
     public String toString() {
@@ -178,6 +186,13 @@ public class Game implements Serializable {
                ", publisher='" + publisher + '\'' +
                ", pegi='" + pegi + '\'' +
                ", PEGIcontent='" + PEGIcontent + '\'' +
+               ", photo='" + photo + '\'' +
                '}';
     }
+    public String getPhotoImagePath() {
+        if (photo == null || id == null) return null;
+        return "/game-photo/" + id + "/" + photo;
+    }
+
+
 }

@@ -52,7 +52,7 @@
             <h2 class="section__title" th:text="${title}"></h2>
             <div class="game__item" th:each="game: ${games}">
                 <div class="game__img">
-                    <img src="/img/gta.png" alt="GTA V_game cover">
+                    <img th:src="@{${game.photoImagePath}}" alt="game photo" />
                 </div>
                 <div class="game__info">
                     <div class="game__title" th:text="${game.title}">Mark</div>
