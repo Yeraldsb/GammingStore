@@ -113,12 +113,32 @@ main {
     font-size: 2rem;
     margin-bottom: 50px;
     color: #000;
-    text-transform: capitalize;
 }
 .intro {
     margin: 0;
     padding: 0;
     width: 100%;
+}
+
+.addGame {
+    display: flex;
+justify-content: space-between;
+    margin: 0;
+    padding: 120px 0 0 0;
+}
+.addGame__item {
+    margin-bottom: 10px;
+}
+.addGame__label {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+.add__img--box {
+    padding: 100px 50px;
+    margin: 0;
+    background-color: #fff;
+    width: 450px;
 }
 
 /*INTRO-SLIDE*/
@@ -247,6 +267,9 @@ footer {
     background-color: #333;
     color: #FFF;
     padding: 10px 0;
+    width: 100%;
+    margin: 0;
+
 }
 .fixed-bottom {
     text-align: center;
