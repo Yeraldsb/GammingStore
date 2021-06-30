@@ -1,4 +1,4 @@
-<header>
+<header xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
@@ -12,7 +12,7 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/">LEGACY GAMES</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" sec:authorize="isAuthenticated()">
             <a class="nav-link" href="/games/new" tabindex="-1" aria-disabled="true">Add Game</a>
           </li>
         </ul>
@@ -20,7 +20,14 @@
           <input class="form-control me-2 input-box" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success btn__outline--white" type="submit">Search</button>
         </form>
-        <a class="nav-login" href="#" tabindex="-1" aria-disabled="true">Login</a>
+        <ul>
+          <li class="nav-item" sec:authorize="isAuthenticated()">
+            <a class="nav-login" href="/logout">Log out</a>
+          </li>
+          <li class="nav-item" sec:authorize="isAnonymous()">
+            <a class="nav-login" href="/login">Login</a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
