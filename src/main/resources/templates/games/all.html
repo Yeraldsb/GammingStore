@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <body>
-<!--<header th:replace="fragments/header"></header>-->
 <main>
     <section class="intro">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -47,9 +46,18 @@
     <section class="games">
         <aside class="add__img">
             <h3>Filters</h3>
+            <ul>
+                <li><a href="/home">All</a></li>
+                <span>CATEGORIES</span>
+                <li th:each="category: ${categories}"><a th:href="${'/home?categoryId='+category.id}" th:text="${category.name}"></a></li>
+                <span>PLATFORMS</span>
+                <li th:each="platform: ${platforms}"><a th:href="${'/home?platformsId='+platform.id}" th:text="${platform.name}"></a></li>
+            </ul>
         </aside>
         <div class="game__list">
             <h2 class="section__title" th:text="${title}"></h2>
+            <p th:if="${games.isEmpty()}"
+               th:text="'No games yet!'"></p>
             <div class="game__item" th:each="game: ${games}">
                 <div class="game__img">
                     <img th:src="@{${game.photoImagePath}}" alt="game photo" />

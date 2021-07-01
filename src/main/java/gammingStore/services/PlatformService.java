@@ -19,5 +19,9 @@ public class PlatformService {
     public List<Platform> allPlatforms() {
         return (List<Platform>) platformRepository.findAll();
     }
+
+    public Platform getPlatform(Long platformId) {
+        return platformRepository.findById(platformId).get();
+    }
 }
 
