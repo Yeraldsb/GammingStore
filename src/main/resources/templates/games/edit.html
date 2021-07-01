@@ -2,111 +2,115 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head th:replace="fragments/head"></head>
 <body>
-    <main>
-        <header th:replace="fragments/header"></header>
-
-        <section class="container m addGame">
+<main>
+    <header th:replace="fragments/header"></header>
+    <section class="addGame">
+        <form class="edit__form" th:action="@{/games/new}" th:object="${game}" method="post" enctype="multipart/form-data">
             <h2 class="section__title" th:text="${title}"></h2>
-            <form th:action="@{/games/new}" th:object="${game}" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <input type="hidden" th:field="*{id}">
-                    <label class="col-md2 addGame__label" for="title">Title:</label>
-                    <input th:field="*{title}" type="text" class="col-md6 form-control form-control-sm addGame__item" id="title"
-                           placeholder="Enter title">
-
-                    <div class="form-group addGame__item">
-                        <label class="col-md2 addGame__label" for="platform">Platform:</label>
-                        <select th:field="*{platform}" type="text" class="col-md6 form-control form-control-sm" id="platform" >
-                            <option th:each="platform: ${platforms}"
-                                    th:value="${platform.id}"
-                                    th:text="${platform.name}"
-                            >
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group addGame__item">
-                        <label class="col-md2 addGame__label" for="yearr">Year:</label>
-                        <input th:field="*{yearr}" type="text" class="col-md6 form-control form-control-sm" id="yearr"
-                               placeholder="Enter year">
-                    </div>
-                    <div class="form-group addGame__item">
-                        <label class="col-md2 addGame__label" for="cost">Price:</label>
-                        <input th:field="*{cost}" type="text" class="col-md6 form-control form-control-sm" id="cost"
-                               placeholder="Enter price">
-                    </div>
-                    <div class="form-group addGame__item">
-                        <label class="col-md2 addGame__label" for="etiqueta">Label:</label>
-                        <select th:field="*{etiqueta}" type="text" class="col-md6 form-control form-control-sm" id="etiqueta">
-                            <option th:each="etiqueta: ${etiquetas}"
-                                    th:value="${etiqueta.id}"
-                                    th:text="${etiqueta.name}"
-                            >
-                        </select>
-                    </div>
-                    <div class="form-group addGame__item">
-                        <label class="col-md2 addGame__label" for="discount">Discount:</label>
-                        <input th:field="*{discount}" type="text" class="col-md6 form-control form-control-sm" id="discount"
-                               placeholder="Enter discount">
-                    </div>
-                    <div class="form-group addGame__item">
-                        <label class="col-md2 addGame__label" for="offer">Offer:</label>
-                        <input th:field="*{offer}" type="text" class="col-md6 form-control form-control-sm" id="offer"
-                               placeholder="Enter offer">
-                    </div>
-                    <div class="form-group addGame__item">
-                        <label class="col-md2 addGame__label" for="category">Category:</label>
-                        <select th:field="*{category}" type="text" class="col-md6 form-control form-control-sm" id="category">
-                            <option th:each="category: ${categories}"
-                                    th:value="${category.id}"
-                                    th:text="${category.name}"
-                            >
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group addGame__item">
-                        <label class="col-md2 addGame__label" for="publisher">Publisher:</label>
-                        <select th:field="*{publisher}" type="text" class="col-md6 form-control form-control-sm" id="publisher">
-                            <option th:each="publisher: ${publishers}"
-                                    th:value="${publisher.id}"
-                                    th:text="${publisher.name}"
-                            >
-                        </select>
-                    </div>
-                    <div class="form-group addGame__item">
-                        <label class="col-md2 addGame__label" for="pegi">PEGI:</label>
-                        <select th:field="*{pegi}" type="text" class="col-md6 form-control form-control-sm" id="pegi">
-                            <option th:each="pegi: ${pegis}"
-                                    th:value="${pegi.id}"
-                                    th:text="${pegi.name}"
-                            >
-                        </select>
-                    </div>
-                    <div class="form-group addGame__item">
-                        <label class="col-md2 addGame__label" for="PEGIcontent">PEGI CONTENT:</label>
-                        <select th:field="*{PEGIcontent}" type="text" class="col-md6 form-control form-control-sm" id="PEGIcontent">
-                            <option th:each="PEGIcontent: ${PEGIcontents}"
-                                    th:value="${PEGIcontent.id}"
-                                    th:text="${PEGIcontent.name}"
-                            >
-                        </select>
-                    </div>
-                    <div class="game__img">
-                        <!-- <img src="/img/gta.png" alt="GTA V_game cover">-->
-
-                        <label class="col-md2" for="photo">Upload your game images</label>
-                        <input name="image" type="file" class="col-md6 form-control-file form-control-sm" id="photo"
-                               accept="img/png, img/jpeg, img/jpg"  placeholder="Choose...">
-
-                        <!--<div class="card-footer ">
-                            <input type="submit" class="btn__outline--orange" value="Save"/>
-                        </div>-->
-                    </div>
-                    <div class="card-footer ">
-                        <input type="submit" class="btn__outline--orange" value="Save"/>
-                    </div>
+            <div class="form-group">
+                <input type="hidden" th:field="*{id}">
+                <label class="addGame__label" for="title">Title:</label>
+                <input th:field="*{title}" type="text" class="col-md6 form-control form-control-sm addGame__item" id="title"
+                       placeholder="Enter title" required>
+                <div class="form-group addGame__item">
+                    <label class="col-md2 addGame__label" for="platform">Platform:</label>
+                    <select th:field="*{platform}" type="text" class="col-md6 form-control form-control-sm" id="platform" required>
+                        <option value="" selected hidden>Please select a platform</option>
+                        <option th:each="platform: ${platforms}"
+                                th:value="${platform.id}"
+                                th:text="${platform.name}"
+                        >
+                        </option>
+                    </select>
                 </div>
-                </form>
-            </section>
-        </main>
-        <footer th:replace="fragments/footer"></footer>
-    </body>
+                <div class="form-group addGame__item">
+                    <label class="col-md2 addGame__label" for="yearr">Year:</label>
+                    <input th:field="*{yearr}" type="text" class="col-md6 form-control form-control-sm" id="yearr"
+                           placeholder="Enter year" required>
+                </div>
+                <div class="form-group addGame__item">
+                    <label class="col-md2 addGame__label" for="cost">Price:</label>
+                    <input th:field="*{cost}" type="text" class="col-md6 form-control form-control-sm" id="cost"
+                           placeholder="Enter price" required>
+                </div>
+                <div class="form-group addGame__item">
+                    <label class="col-md2 addGame__label" for="etiqueta">Label:</label>
+                    <select th:field="*{etiqueta}" type="text" class="col-md6 form-control form-control-sm" id="etiqueta" required>
+                        <option value="" selected hidden>Please select a label</option>
+                        <option th:each="etiqueta: ${etiquetas}"
+                                th:value="${etiqueta.id}"
+                                th:text="${etiqueta.name}"
+                        >
+                    </select>
+                </div>
+                <div class="form-group addGame__item">
+                    <label class="col-md2 addGame__label" for="discount">Discount:</label>
+                    <input th:field="*{discount}" type="text" class="col-md6 form-control form-control-sm" id="discount"
+                           placeholder="Enter discount">
+                </div>
+                <div class="form-group addGame__item">
+                    <label class="col-md2 addGame__label" for="offer">Offer:</label>
+                    <input th:field="*{offer}" type="text" class="col-md6 form-control form-control-sm" id="offer"
+                           placeholder="Enter offer">
+                </div>
+                <div class="form-group addGame__item">
+                    <label class="col-md2 addGame__label" for="category">Category:</label>
+                    <select th:field="*{category}" type="text" class="col-md6 form-control form-control-sm" id="category" required>
+                        <option value="" selected hidden>Please select one category</option>
+                        <option th:each="category: ${categories}"
+                                th:value="${category.id}"
+                                th:text="${category.name}"
+                        >
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group addGame__item">
+                    <label class="col-md2 addGame__label" for="publisher">Publisher:</label>
+                    <select th:field="*{publisher}" type="text" class="col-md6 form-control form-control-sm" id="publisher" required>
+                        <option value="" selected hidden>Please select a publisher</option>
+                        <option th:each="publisher: ${publishers}"
+                                th:value="${publisher.id}"
+                                th:text="${publisher.name}"
+                        >
+                    </select>
+                </div>
+                <div class="form-group addGame__item">
+                    <label class="col-md2 addGame__label" for="pegi">PEGI:</label>
+                    <select th:field="*{pegi}" type="text" class="col-md6 form-control form-control-sm" id="pegi" required>
+                        <option value="" selected hidden>Please select a PEGI</option>
+                        <option th:each="pegi: ${pegis}"
+                                th:value="${pegi.id}"
+                                th:text="${pegi.name}"
+                        >
+                    </select>
+                </div>
+                <div class="form-group addGame__item">
+                    <label class="col-md2 addGame__label" for="PEGIcontent">PEGI CONTENT:</label>
+                    <select th:field="*{PEGIcontent}" type="text" class="col-md6 form-control form-control-sm" id="PEGIcontent" required>
+                        <option value="" selected hidden>Please select a PEGI Content</option>
+                        <option th:each="PEGIcontent: ${PEGIcontents}"
+                                th:value="${PEGIcontent.id}"
+                                th:text="${PEGIcontent.name}"
+                        >
+                    </select>
+                </div>
+                <div class="addGame__btn">
+                    <input type="submit" class="btn__outline--orange" value="Save your game"/>
+                </div>
+            </div>
+
+            <aside class="add__img--box">
+                <div class="game__img">
+                    <img th:src="@{${game.photoImagePath}}" alt="Game photo">
+                </div>
+                <h3>Game images</h3>
+                <label class="col-md2" for="photo">Upload your game images</label>
+                <input name="image" type="file" class="col-md6 form-control-file form-control-sm game__img" id="photo"
+                       accept="img/png, img/jpeg, img/jpg"  placeholder="Browse...">
+            </aside>
+        </form>
+
+    </section>
+</main>
+<footer th:replace="fragments/footer"></footer>
+</body>

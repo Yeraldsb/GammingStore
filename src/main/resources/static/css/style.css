@@ -5,9 +5,7 @@ a {
 a:hover {
     color: #FC3727;
 }
-
 /*BUTTONS*/
-
 .btn__outline--orange, .btn__outline--white {
     margin: 0 0 20px 0;
     color: #FC3727;
@@ -32,7 +30,6 @@ a:hover {
     background-color: transparent;
     border: 1px solid #FFF;
 }
-
 /*NAV BAR*/
 .navbar {
     background-image: linear-gradient(to top, #FC3727 0%, #FFAA05 100%);
@@ -90,7 +87,6 @@ a:hover {
     justify-content: space-between;
     margin: 5px 0;
 }
-
 .nav__login--item {
     list-style: none;
 }
@@ -105,20 +101,15 @@ a:hover {
     color: #FFF;
     padding: 20px 40px;
 }
-
 .nav__login--item:hover {
     color: #FFF;
     font-weight: bold;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
 }
-
-
 /*MAIN*/
 main {
     background-color: rgba(231, 231, 231, 0.3);
-
 }
-
 /*SECTION*/
 .section__title {
     font-size: 2rem;
@@ -130,30 +121,7 @@ main {
     padding: 30px 0;
     width: 100%;
 }
-
-.addGame {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 120px 0 0 0;
-}
-.addGame__item {
-    margin-bottom: 10px;
-}
-.addGame__label {
-    font-weight: bold;
-    font-size: 1rem;
-    line-height: 2rem;
-}
-.add__img--box {
-    padding: 100px 50px;
-    margin: 0;
-    background-color: #fff;
-    width: 450px;
-}
-
 /*INTRO-SLIDE*/
-
 .carousel-caption {
     background-color: rgba(0, 0, 0, .8);
     margin: 20px 0 0;
@@ -165,21 +133,16 @@ main {
     left: 0;
     bottom: 3rem;
 }
-
 .carousel {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
-
 }
 .carousel__title {
     margin-bottom: 50px;
     font-size: 2.5rem;
 }
-
 .carousel-control-next-icon {
     background-position: 70%;
 }
-
-
 /*GAMES SECTION*/
 .games {
     display: flex;
@@ -256,6 +219,9 @@ aside {
     margin-bottom: 10px;
     color: #fc4921;
 }
+.game__prices--discount:after {
+    content: "%";
+}
 .game__prices--original {
     font-weight: 300;
     font-size: 1.25rem;
@@ -263,21 +229,55 @@ aside {
     color: #666;
     text-decoration: line-through;
 }
+.game__prices--original:after {
+    content: "€";
+}
 .game__prices--final {
     font-weight: bold;
     font-size: 2rem;
     line-height: 1.5rem;
     color: #000000;
 }
+.game__prices--final:after {
+    content: "€";
+}
 .game__edit {
     display: flex;
     justify-content: space-between;
-
 }
 .game__edit .btn__outline--orange{
     margin: 0 5px;
 }
-
+/*EDIT SECTION*/
+.addGame {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+    padding-top: 120px;
+}
+.edit__form {
+    width: 100%;
+    padding: 70px;
+    margin-bottom: 50px;
+}
+.addGame__item {
+    margin-bottom: 10px;
+}
+.addGame__label {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+.addGame__btn {
+    margin-top: 50px;
+}
+.add__img--box {
+    padding: 100px 30px;
+    margin: 0;
+    right: 0;
+    background-color: #fff;
+}
 /*FOOTER*/
 footer {
     background-color: #333;
@@ -285,7 +285,6 @@ footer {
     padding: 10px 0;
     width: 100%;
     margin: 0;
-
 }
 .fixed-bottom {
     text-align: center;
