@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 
 @Controller
@@ -78,6 +79,15 @@ public class GameController {
         FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
 
         return "redirect:/home";
+    }
+
+    @GetMapping("/games/search")
+    String searchGame(Model model, @RequestParam String word){
+        model.addAttribute("title", "Games that contains " + word);
+        model.addAttribute("games", gameService.searchByName(word) );
+
+        return "home";
+
     }
 }
 

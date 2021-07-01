@@ -16,8 +16,8 @@
             <a class="nav-link" href="/games/new" tabindex="-1" aria-disabled="true">Add Game</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2 input-box" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" action="/games/search" method="get">
+          <input name="word" class="form-control me-2 input-box" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success btn__outline--white" type="submit">Search</button>
         </form>
         <ul class="nav__login">
