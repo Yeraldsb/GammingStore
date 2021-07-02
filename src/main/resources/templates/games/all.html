@@ -46,16 +46,18 @@
     <section class="games">
         <div class="filters" >
             <h3>Filters</h3>
-            <ul>
-                <li><a href="/home">All</a></li>
-                <span>CATEGORIES</span>
-                <li th:each="category: ${categories}"><a th:href="${'/home?categoryId='+category.id}" th:text="${category.name}"></a></li>
-                <span>PLATFORMS</span>
-                <li th:each="platform: ${platforms}"><a th:href="${'/home?platformId='+platform.id}" th:text="${platform.name}"></a></li>
-                <span>PUBLISHERS</span>
-                <li th:each="publisher: ${publishers}"><a th:href="${'/home?publisherId='+publisher.id}" th:text="${publisher.name}"></a></li>
-                <span>PEGI</span>
-                <li th:each="pegi: ${pegis}"><a th:href="${'/home?pegiId='+pegi.id}" th:text="${pegi.name}"></a></li>
+            <ul class="filters__list">
+                <li class="filters__item">
+                    <a class="filters__title" href="/home">All</a>
+                </li>
+                <span class="filters__title">Categories</span>
+                <li  class="filters__item" th:each="category: ${categories}">
+                    <a th:href="${'/home?categoryId='+category.id}" th:text="${category.name}"></a>
+                </li>
+                <span class="filters__title">Platform</span>
+                <li  class="filters__item" th:each="platform: ${platforms}">
+                    <a th:href="${'/home?platformId='+platform.id}" th:text="${platform.name}"></a>
+                </li>
             </ul>
         </div>
         <div class="game__list">

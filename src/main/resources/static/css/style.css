@@ -298,6 +298,33 @@ main {
 input::placeholder {
     border: 1px solid #fc4921;
 }
+
+/*FILTERS*/
+.filters__list {
+    list-style: none;
+    padding: 0;
+}
+
+.filters__item {
+    border-bottom: 1px solid #fc4921;
+}
+.filters__title {
+    background-color: #FFF;
+    text-transform: uppercase;
+    color: #fc4921;
+    font-weight: 700;
+    width: 100%;
+    padding-bottom: 50px;
+}
+.filters__list a {
+    color: #666;
+    line-height: 2.5rem;
+}
+.filters__list a:hover {
+    color: #fc4921;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
 /*FOOTER*/
 footer {
     background-color: #333;
@@ -310,104 +337,4 @@ footer {
     text-align: center;
     position: relative;
     padding-top: 5px;
-}
-/*FILTERS*/
-.filter-group {
-    border-bottom: 1px solid #e4e4e4
-}
-.card {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 0.37rem
-}
-.card-header {
-    padding: 0.75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
-}
-.filter-group .card-header {
-    border-bottom: 0
-}
-.icon-control {
-    margin-top: 6px;
-    float: right;
-    font-size: 80%
-}
-.list-menu {
-    list-style: none;
-    margin: 0;
-    padding-left: 0
-}
-.list-menu a {
-    color: #343a40
-}
-a {
-    text-decoration: none !important;
-    background-color: transparent;
-}
-.checkbox-btn {
-    position: relative
-}
-.checkbox-btn input {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-}
-.checkbox-btn input:checked~.btn {
-    border-color: #fc4921;
-    background-color: #fc4921;
-    color: #000;
-}
-.btn-light {
-    display: inline-block;
-    font-weight: 600;
-    color: #343a40;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #eee;
-    border: 1px solid #eee;
-    padding: 0.45rem 0.85rem;
-    font-size: 10px;
-    line-height: 1.5;
-    border-radius: 0.37rem;
-}
-.btn-light:hover {
-    background-color: #000;
-    border-color: #989898;
-}
-.btn-medium {
-    font-size: 12px;
-    padding: 10px 22px;
-    display: inline-block;
-    margin-right: 20px;
-    letter-spacing: 2px;
-    border: 1px solid #fc4921;
-    width: 100%;
-}
-.highlight-button:hover {
-    background-color: #fc4921;
-    border: 2px solid #fc4921;
-    color: #000;
-}
-.custom-control {
-    position: relative;
-    display: block;
-    min-height: 1.5rem;
-    padding-left: 1.5rem;
 }
