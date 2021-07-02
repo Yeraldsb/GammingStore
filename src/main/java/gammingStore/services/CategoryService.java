@@ -2,6 +2,7 @@ package gammingStore.services;
 
 import gammingStore.models.Category;
 import gammingStore.models.CategoryRepository;
+import gammingStore.models.Game;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ public class CategoryService {
     public CategoryService(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
+
 
     public List<Category> allCategories() {
         return (List<Category>) categoryRepository.findAll();

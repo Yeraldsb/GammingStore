@@ -14,7 +14,7 @@
                     <img class="d-block w-100" th:src="@{../img/redDead.jpg}" alt="Read Dead Redemption">
                     <div class="carousel-caption d-none d-md-block carousel__label">
                         <h2 class="carousel__title">Read Dead Redemption</h2>
-                        <a href="#" class="btn__outline--white label-btn">Reserve now!</a>
+                        <a href="mailto:contact@legacygames.com " class="btn__outline--white label-btn">Reserve now!</a>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -44,16 +44,16 @@
     </section>
 
     <section class="games">
-        <aside class="add__img">
+        <div class="filters">
             <h3>Filters</h3>
             <ul>
                 <li><a href="/home">All</a></li>
                 <span>CATEGORIES</span>
                 <li th:each="category: ${categories}"><a th:href="${'/home?categoryId='+category.id}" th:text="${category.name}"></a></li>
                 <span>PLATFORMS</span>
-                <li th:each="platform: ${platforms}"><a th:href="${'/home?platformsId='+platform.id}" th:text="${platform.name}"></a></li>
+                <li th:each="platform: ${platforms}"><a th:href="${'/home?platformId='+platform.id}" th:text="${platform.name}"></a></li>git
             </ul>
-        </aside>
+        </div>
         <div class="game__list">
             <h2 class="section__title" th:text="${title}"></h2>
             <p th:if="${games.isEmpty()}"

@@ -29,15 +29,23 @@ public class HomeController {
 
     @GetMapping(path={"/", "/home", "/index"})
     public String home (Model model, @RequestParam(required = false) Long categoryId, Long platformId) {
+
         List<Game> games;
-        if (categoryId == null) {
+        if(categoryId == null ) {
             games = gameService.allGames();
-        } else {
-            Category category = categoryService.getCategory(categoryId);
-            games = category.getGames();
+            if(platformId == null){
+                games = gameService.allGames();
+            }else{
+                Platform platform = platformService.getPlatform(platformId);
+                games = platform.getGames();
+            }
         }
 
+        else{
+            Category category = categoryService.getCategory(categoryId);
+            games = category.getGames();
 
+        }
         model.addAttribute("title", "Game list");
         model.addAttribute("games", games);
         model.addAttribute("categories", categoryService.allCategories());
