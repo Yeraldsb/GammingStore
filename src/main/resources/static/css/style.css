@@ -285,8 +285,6 @@ main {
     padding: 70px;
     max-width: 250px;
 }
-.add__img img {
-}
 .aside__title {
     color: #333333;
     margin: 0 0 20px;
@@ -305,16 +303,12 @@ input::placeholder {
     padding: 0;
 }
 
-.filters__item {
-    border-bottom: 1px solid #fc4921;
-}
 .filters__title {
     background-color: #FFF;
     text-transform: uppercase;
     color: #fc4921;
     font-weight: 700;
     width: 100%;
-    padding-bottom: 50px;
 }
 .filters__list a {
     color: #666;
