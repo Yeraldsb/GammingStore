@@ -124,31 +124,28 @@ main {
 /*INTRO-SLIDE*/
 .carousel-caption {
     background-color: rgba(0, 0, 0, .8);
-    margin: 20px 0 0;
-    padding: 50px 0;
+    margin: 0;
+    padding: 40px 0;
     width: 100%;
     justify-content: center;
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 3rem;
+    bottom: 4rem;
 }
 .carousel {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
 }
 .carousel__title {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     font-size: 2.5rem;
-}
-.carousel-control-next-icon {
-    background-position: 70%;
 }
 /*GAMES SECTION*/
 .games {
     display: flex;
     justify-content: space-between;
 }
-aside {
+.filters {
     padding: 70px 50px;
     margin: 0;
     width: 400px;
@@ -175,7 +172,6 @@ aside {
 .game__img img {
     border: 1px solid #CCC;
     border-radius: 20px;
-    padding: 15px 0;
     max-width: 150px;
 }
 .game__info {
@@ -220,7 +216,7 @@ aside {
     color: #fc4921;
 }
 .game__prices--discount:after {
-    content: "%";
+    content: " %";
 }
 .game__prices--original {
     font-weight: 300;
@@ -230,7 +226,7 @@ aside {
     text-decoration: line-through;
 }
 .game__prices--original:after {
-    content: "€";
+    content: " €";
 }
 .game__prices--final {
     font-weight: bold;
@@ -239,7 +235,7 @@ aside {
     color: #000000;
 }
 .game__prices--final:after {
-    content: "€";
+    content: " €";
 }
 .game__edit {
     display: flex;
@@ -250,16 +246,16 @@ aside {
 }
 /*EDIT SECTION*/
 .addGame {
-    display: flex;
-    justify-content: space-between;
     margin: 0;
-    width: 100%;
-    padding-top: 120px;
+    padding: 110px 0 0;
 }
 .edit__form {
+    display: flex;
+    justify-content: space-between;
+}
+.edit__form--group {
     width: 100%;
-    padding: 70px;
-    margin-bottom: 50px;
+    padding: 70px 100px;
 }
 .addGame__item {
     margin-bottom: 10px;
@@ -273,10 +269,34 @@ aside {
     margin-top: 50px;
 }
 .add__img--box {
-    padding: 100px 30px;
+    padding: 70px;
     margin: 0;
     right: 0;
     background-color: #fff;
+}
+.add__img {
+    border: 1px solid #CCC;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    margin: 0 0 50px;
+    background-image: url("/img/controller.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 70px;
+    max-width: 250px;
+}
+.add__img img {
+}
+.aside__title {
+    color: #333333;
+    margin: 0 0 20px;
+    font-size: 1.75rem;
+}
+.add__img--label {
+    margin-bottom: 30px;
+}
+input::placeholder {
+    border: 1px solid #fc4921;
 }
 /*FOOTER*/
 footer {
@@ -288,6 +308,106 @@ footer {
 }
 .fixed-bottom {
     text-align: center;
-    padding: 5px;
     position: relative;
+    padding-top: 5px;
+}
+/*FILTERS*/
+.filter-group {
+    border-bottom: 1px solid #e4e4e4
+}
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.37rem
+}
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+}
+.filter-group .card-header {
+    border-bottom: 0
+}
+.icon-control {
+    margin-top: 6px;
+    float: right;
+    font-size: 80%
+}
+.list-menu {
+    list-style: none;
+    margin: 0;
+    padding-left: 0
+}
+.list-menu a {
+    color: #343a40
+}
+a {
+    text-decoration: none !important;
+    background-color: transparent;
+}
+.checkbox-btn {
+    position: relative
+}
+.checkbox-btn input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.checkbox-btn input:checked~.btn {
+    border-color: #fc4921;
+    background-color: #fc4921;
+    color: #000;
+}
+.btn-light {
+    display: inline-block;
+    font-weight: 600;
+    color: #343a40;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #eee;
+    border: 1px solid #eee;
+    padding: 0.45rem 0.85rem;
+    font-size: 10px;
+    line-height: 1.5;
+    border-radius: 0.37rem;
+}
+.btn-light:hover {
+    background-color: #000;
+    border-color: #989898;
+}
+.btn-medium {
+    font-size: 12px;
+    padding: 10px 22px;
+    display: inline-block;
+    margin-right: 20px;
+    letter-spacing: 2px;
+    border: 1px solid #fc4921;
+    width: 100%;
+}
+.highlight-button:hover {
+    background-color: #fc4921;
+    border: 2px solid #fc4921;
+    color: #000;
+}
+.custom-control {
+    position: relative;
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5rem;
 }

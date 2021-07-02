@@ -6,8 +6,8 @@
     <header th:replace="fragments/header"></header>
     <section class="addGame">
         <form class="edit__form" th:action="@{/games/new}" th:object="${game}" method="post" enctype="multipart/form-data">
-            <h2 class="section__title" th:text="${title}"></h2>
-            <div class="form-group">
+            <div class="form-group edit__form--group">
+                <h2 class="section__title">Create a new game</h2>
                 <input type="hidden" th:field="*{id}">
                 <label class="addGame__label" for="title">Title:</label>
                 <input th:field="*{title}" type="text" class="col-md6 form-control form-control-sm addGame__item" id="title"
@@ -99,15 +99,15 @@
                 </div>
             </div>
 
-            <aside class="add__img--box">
-                <div class="game__img">
-                    <img th:src="@{${game.photoImagePath}}" alt="Game photo">
+            <div class="add__img--box">
+                <div class="add__img">
+                    <img th:src="@{${game.photoImagePath}}" alt="">
                 </div>
-                <h3>Game images</h3>
-                <label class="col-md2" for="photo">Upload your game images</label>
-                <input name="image" type="file" class="col-md6 form-control-file form-control-sm game__img" id="photo"
-                       accept="img/png, img/jpeg, img/jpg"  placeholder="Browse...">
-            </aside>
+                <h3 class="aside__title">Game image</h3>
+                <label class="col-md2 add__img--label" for="photo">Upload your '.png, '.jpg' or '.jpeg' game image file.</label>
+                <input name="image" type="file" class="col-md8 form-control-file form-control-sm b" id="photo"
+                       accept="img/png, img/jpeg, img/jpg" placeholder="Browse...">
+            </div>
         </form>
 
     </section>

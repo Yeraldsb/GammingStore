@@ -51,7 +51,7 @@
                 <span>CATEGORIES</span>
                 <li th:each="category: ${categories}"><a th:href="${'/home?categoryId='+category.id}" th:text="${category.name}"></a></li>
                 <span>PLATFORMS</span>
-                <li th:each="platform: ${platforms}"><a th:href="${'/home?platformId='+platform.id}" th:text="${platform.name}"></a></li>git
+                <li th:each="platform: ${platforms}"><a th:href="${'/home?platformId='+platform.id}" th:text="${platform.name}"></a></li>
             </ul>
         </div>
         <div class="game__list">
