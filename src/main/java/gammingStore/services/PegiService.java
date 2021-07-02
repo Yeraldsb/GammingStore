@@ -21,4 +21,6 @@ public class PegiService {
     public List<Pegi> allPegis() {
         return (List<Pegi>) pegiRepository.findAll();
     }
+
+    public Pegi getPegi(Long pegiId) { return pegiRepository.findById(pegiId).get(); }
 }

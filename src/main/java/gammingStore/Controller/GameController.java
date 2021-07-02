@@ -85,7 +85,10 @@ public class GameController {
     String searchGame(Model model, @RequestParam String word){
         model.addAttribute("title", "Games that contains " + word);
         model.addAttribute("games", gameService.searchByName(word) );
-
+        model.addAttribute("categories", categoryService.allCategories());
+        model.addAttribute("platforms", platformService.allPlatforms());
+        model.addAttribute("publishers", publisherService.allPublishers());
+        model.addAttribute("pegis", pegiService.allPegis());
         return "home";
 
     }

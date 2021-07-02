@@ -1,9 +1,6 @@
 package gammingStore.services;
 
-import gammingStore.models.Category;
-import gammingStore.models.CategoryRepository;
-import gammingStore.models.Publisher;
-import gammingStore.models.PublisherRepository;
+import gammingStore.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +11,6 @@ public class PublisherService {
 
     private PublisherRepository publisherRepository;
 
-
     @Autowired
     public PublisherService(PublisherRepository publisherRepository) {
         this.publisherRepository = publisherRepository;
@@ -22,5 +18,9 @@ public class PublisherService {
 
     public List<Publisher> allPublishers() {
         return (List<Publisher>) publisherRepository.findAll();
+    }
+
+    public Publisher getPublisher(Long publisherId) {
+        return publisherRepository.findById(publisherId).get();
     }
 }
