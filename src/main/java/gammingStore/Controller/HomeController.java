@@ -27,7 +27,7 @@ public class HomeController {
         this.pegiService = pegiService;
     }
 
-    @GetMapping(path={"/", "/home", "/index"})
+    @GetMapping(path={"/", "/home", "/index", "/filters" })
     public String home (Model model, @RequestParam(required = false) Long categoryId, Long platformId, Long publisherId, Long pegiId) {
 
 

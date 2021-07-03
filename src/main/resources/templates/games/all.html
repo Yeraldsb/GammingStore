@@ -48,7 +48,7 @@
             <h3>Filters</h3>
             <ul class="filters__list">
                 <li class="filters__item">
-                    <a class="filters__item--link" href="/home">All</a>
+                    <a class="filters__title" href="/home">All</a>
                 </li>
                 <span class="filters__title">Categories</span>
                 <li  class="filters__item" th:each="category: ${categories}">
@@ -57,6 +57,14 @@
                 <span class="filters__title">Platform</span>
                 <li  class="filters__item" th:each="platform: ${platforms}">
                     <a th:href="${'/home?platformId='+platform.id}" th:text="${platform.name}"></a>
+                </li>
+                <span class="filters__title">Publishers</span>
+                <li  class="filters__item" th:each="publisher: ${publishers}">
+                    <a th:href="${'/home?publisherId='+publisher.id}" th:text="${publisher.name}"></a>
+                </li>
+                <span class="filters__title">Pegi</span>
+                <li  class="filters__item" th:each="pegi: ${pegis}">
+                    <a th:href="${'/home?pegiId='+pegi.id}" th:text="${pegi.name}"></a>
                 </li>
             </ul>
         </div>
